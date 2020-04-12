@@ -33,6 +33,11 @@ int main(int argc, char** argv) {
 	char* home_path = (char*)malloc(256 * sizeof(char));
 	strcpy(home_path, getenv("HOME"));
 
+	// Brightness file directory
+	char* br_dir = (char*)malloc(256 * sizeof(char));
+	strcpy(br_dir, home_path);
+	strcat(br_dir, BRDIR);
+
 	// Path to default brightness file
 	char* default_br_path = (char*)malloc(256 * sizeof(char));
 	strcpy(default_br_path, home_path);

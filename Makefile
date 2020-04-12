@@ -1,9 +1,15 @@
 CC=gcc
+CFLAGS=
+OUTPUT=build
 
 default:
-	$(CC) *.c -o build
+	$(CC) *.c -o $(OUTPUT) $(CFLAGS)
+	sudo chown root $(OUTPUT)
+	sudo chmod +s $(OUTPUT)
 
-suid:
-	$(CC) *.c -o build
-	sudo chown root build
-	sudo chmod +s build
+nosuid:
+	$(CC) *.c -o $(OUTPUT) $(CFLAGS)
+
+clean:
+	rm -f $(OUTPUT)
+
